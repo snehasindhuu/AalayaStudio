@@ -1,0 +1,46 @@
+@import "tailwindcss";
+
+@theme {
+  --color-background: #0a0b10;
+  --color-surface: rgba(20, 22, 37, 0.6);
+  --color-surface-solid: #141625;
+  --color-primary: #3F4EFF;
+  --color-gold: #D4AF37;
+  --color-gold-light: #F3E5AB;
+  --color-gold-dark: #AA8C2C;
+  --color-text-primary: #F9FAFB;
+  --color-text-muted: #9CA3AF;
+  --color-border-color: rgba(212, 175, 55, 0.15); /* Subtle gold border */
+  --color-status-pending: #F59E0B;
+  --color-status-completed: #10B981;
+  --color-status-alert: #EF4444;
+  
+  --font-grifter: "Grifter Bold", Inter, sans-serif;
+  --font-satoshi: "Satoshi Variable", Inter, sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-background text-text-primary font-satoshi antialiased;
+    background-image: radial-gradient(circle at 50% 0%, rgba(212, 175, 55, 0.05) 0%, transparent 70%);
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-grifter tracking-wide;
+  }
+}
+
+/* Fallback fonts if custom fonts are not loaded */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@font-face {
+  font-family: 'Grifter Bold';
+  src: local('Impact'), local('Arial Black');
+  /* Replace with actual url when available */
+}
+
+@font-face {
+  font-family: 'Satoshi Variable';
+  src: local('Inter'), local('Segoe UI');
+  /* Replace with actual url when available */
+}
